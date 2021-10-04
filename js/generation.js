@@ -10,6 +10,7 @@ var requestOptions = {
 
 let page = 1;
 let lastSearched = "";
+let lastIdPressed = "";
 
 async function queryMovie(query, page) {
     const res = await fetch(`https://api.themoviedb.org/3/search/movie/?query=${query}&page=${page}`, requestOptions)
@@ -26,29 +27,36 @@ function setPage() { }
 async function generatePage(execAnyways) {
     let query = $("#query").val();
     let cardContainer = document.getElementById("card-container");
+    cardContainer.innerHTML = "";
     console.log(lastSearched)
     if (lastSearched != query || execAnyways) { // 
         lastSearched = query
         let movies = await queryMovie(query, page);
         console.log(movies)
         movies.results.forEach(movie => {
-            // console.log(movie)
+            let wrapper = document.createElement("div");
+            wrapper.classList.add("wrap");
+            wrapper.classList.add("modal-activator")
+            wrapper.setAttribute("id", movie.id)
+
+            let container = document.createElement("div");
+            container.classList.add("container");
+            container.style.backgroundImage = "url('https://image.tmdb.org/t/p/w500" + movie.poster_path + "')";
+
+            let p = document.createElement("p")
+            p.innerHTML = movie.original_title;
+
+            container.appendChild(p)
+            wrapper.appendChild(container)
+            cardContainer.appendChild(wrapper)
         });
     }
+    updateCards()
 }
+
 
 document.getElementById("query").addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         generatePage(false)
     }
 });
-
-
-document.getElementById("1").style.backgroundImage = "url('https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80')";
-
-document.getElementById("1").style.backgroundImage = "url('https://images.unsplash.com/photo-1633340867842-a17f965a5113?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80')";
-
-
-
-// document.getElementById("1").setProperty("background", "url('https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80')", "important");
-

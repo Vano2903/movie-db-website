@@ -17,13 +17,15 @@
 
 </head>
 
-<body>
+<body onload="setPopulars()">
     <center>
         <h1>Movie website - Vano</h1>
     </center>
+
     <br>
     <br>
     <br>
+
     <div class="search-wrapper">
         <div class="input-holder">
             <input id="query" type="text" class="search-input" placeholder="Type to search" />
@@ -31,75 +33,20 @@
         </div>
         <span class="close" onclick="searchToggle(this, event);"></span>
     </div>
+
     <br>
     <br>
     <br>
     <br>
-    <!-- style="background: url('https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')" -->
+
+    <h1>Popolari in questo momento:</h1>
     <section class="main">
-        <div class="scrollmenu">
-            <div class="wrap">
-                <div id="1" class="container">
-                    <!-- <div class="overlay"> -->
-                    <!-- <img src="https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"> -->
-                    <p>01. asdsd sd sasd e we adasd d s a</p>
-                    <!-- </div> -->
-                </div>
-            </div>
+        <div id="trending-container" class="scrollmenu">
 
-            <div class="wrap">
-                <div class="container ">
-                    <p>02. Reverse</p>
-                </div>
-            </div>
+        </div>
 
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
+        <div id="card-container" class="flex">
 
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
-
-            <div class="wrap">
-                <div class="container ">
-                    <p>03. Normal</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -112,9 +59,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+
+    <script src="js/generation.js"></script>
     <script src="js/card.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/trending.js"></script>
+
 
 </body>
 

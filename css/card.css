@@ -117,3 +117,10 @@
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
 }
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: space-evenly;
+}
+

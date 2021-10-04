@@ -81,11 +81,22 @@ class parallaxTiltEffect {
     }
 }
 
-// const $ = e => document.querySelector(e);
-
 document.querySelectorAll(".wrap").forEach((ele) => {
     new parallaxTiltEffect({
         element: ele,
         tiltEffect: 'normal'
     });
 })
+
+function updateCards() {
+    document.querySelectorAll(".wrap").forEach((ele) => {
+        new parallaxTiltEffect({
+            element: ele,
+            tiltEffect: 'normal'
+        });
+    })
+
+    document.querySelectorAll(".modal-activator").forEach((ele) => {
+        ele.addEventListener("click", () => openModal(ele.id))
+    })
+}
