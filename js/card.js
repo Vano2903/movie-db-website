@@ -96,7 +96,11 @@ function updateCards() {
         });
     })
 
-    document.querySelectorAll(".modal-activator").forEach((ele) => {
-        ele.addEventListener("click", () => openModal(ele.id))
+    document.querySelectorAll(".modal-activator-movie").forEach((ele) => {
+        ele.addEventListener("click", () => openModal(ele.id, false))
+    })
+
+    document.querySelectorAll(".modal-activator-popular").forEach((ele) => {
+        ele.addEventListener("click", () => openModal(ele.id, true))
     })
 }

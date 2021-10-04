@@ -51,10 +51,18 @@
   height: 100%;
 }
 
+.container p {
+  color: rgba(255, 255, 255, 0.774);
+  font-size: 3.2rem;
+}
+
 @media only screen and (max-width: 1100px) {
     .container{
         width: 24rem;
         height: 30rem;
+    }
+    .container p {
+      font-size: 3.0rem;
     }
 }
 
@@ -63,12 +71,18 @@
         width: 17rem;
         height: 20rem;
     }
+    .container p {
+      font-size: 2.4rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .container{
         width: 15rem;
         height: 18rem;
+    }
+    .container p {
+      font-size: 2.2rem;
     }
 }
 
@@ -107,10 +121,7 @@
   transition: none;
 }
 
-.container p {
-  color: rgba(0, 0, 0, 0.774);
-  font-size: 3.2rem;
-}
+
 
 .wrap:hover .container::before,
 .wrap:hover .container::after {

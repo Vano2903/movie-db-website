@@ -18,7 +18,7 @@ async function setPopulars() {
     populars.results.forEach(movie => {
         let wrapper = document.createElement("div");
         wrapper.classList.add("wrap");
-        wrapper.classList.add("modal-activator")
+        wrapper.classList.add("modal-activator-popular")
         wrapper.setAttribute("id", movie.id)
 
         let container = document.createElement("div");

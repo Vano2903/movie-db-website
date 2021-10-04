@@ -29,14 +29,17 @@ async function generatePage(execAnyways) {
     let cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
     console.log(lastSearched)
-    if (lastSearched != query || execAnyways) { // 
+
+    if (lastSearched != query || execAnyways) {
         lastSearched = query
+
         let movies = await queryMovie(query, page);
-        console.log(movies)
+        sessionStorage.setItem("searched", JSON.stringify(movies))
+
         movies.results.forEach(movie => {
             let wrapper = document.createElement("div");
             wrapper.classList.add("wrap");
-            wrapper.classList.add("modal-activator")
+            wrapper.classList.add("modal-activator-movie")
             wrapper.setAttribute("id", movie.id)
 
             let container = document.createElement("div");
