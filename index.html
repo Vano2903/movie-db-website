@@ -12,18 +12,29 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/search.css">
+
 
 </head>
 
 <body>
-
-    <h1>Parallax Tilt Effect Cards</h1>
-    <p>Hover over the cards.</p>
-
-    <section class="search-container">
-        <label for="search_bar">Search</label>
-        <input class="search_bar" name="search_bar" type="search" placeholder="Search">
-    </section>
+    <center>
+        <h1>Movie website - Vano</h1>
+    </center>
+    <br>
+    <br>
+    <br>
+    <div class="search-wrapper">
+        <div class="input-holder">
+            <input type="text" class="search-input" placeholder="Type to search" />
+            <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+        </div>
+        <span class="close" onclick="searchToggle(this, event);"></span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <section class="main">
         <div class="scrollmenu">
@@ -100,6 +111,8 @@
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/card.js"></script>
+    <script src="js/search.js"></script>
+
 </body>
 
 </html>

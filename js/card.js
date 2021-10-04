@@ -81,8 +81,7 @@ class parallaxTiltEffect {
     }
 }
 
-const $ = e => document.querySelector(e);
-
+// const $ = e => document.querySelector(e);
 
 document.querySelectorAll(".wrap").forEach((ele) => {
     new parallaxTiltEffect({

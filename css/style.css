@@ -20,7 +20,7 @@ body {
 
   color: hsla(0, 0%, 0%, .6);
   background: var(--background-color);
-  text-align: center;
+  /* text-align: center; */
 }
 
 h1 {
