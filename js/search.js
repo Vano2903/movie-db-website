@@ -11,6 +11,6 @@ function searchToggle(obj, evt) {
         container.find('.search-input').val('');
 
     } else {
-        
+        generatePage(true)
     }
 }
